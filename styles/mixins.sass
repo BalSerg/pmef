@@ -1,0 +1,114 @@
+$desktop: 1023px
+$tablet: 767px
+
+$root-font-size: 16px
+
+$neon: #00FFF0
+$neon-hover: rgba(0, 255, 240, 0.7)
+$blue: #04CBF5
+$white: #fff
+$black: #000
+
+$transition-in: all ease-in 300ms
+$transition-out: all ease-out 300ms
+
+@function rem($size)
+  @return $size / $root-font-size * 1rem
+
+=mobile
+  @media screen and (max-width: $tablet)
+    @content
+
+=tablet
+  @media screen and (max-width: $desktop)
+    @content
+
+=background-blur($bg-color, $bg-blur)
+  background: $bg-color
+  backdrop-filter: blur($bg-blur)
+
+=text-lvl($fontSize, $lineHeight)
+  font-size: $fontSize
+  line-height: $lineHeight
+  font-family: BlenderPro-book, sans-serif
+
+
+=text-lvl-1
+  +text-lvl(rem(71px), rem(80px))
+
+  +tablet
+    +text-lvl(rem(50px), rem(56px))
+
+  +mobile
+    +text-lvl(rem(32px), rem(38px))
+
+=text-lvl-2
+  +text-lvl(rem(42px), rem(56px))
+
+  +tablet
+    +text-lvl(rem(40px), rem(44px))
+
+  +mobile
+    +text-lvl(rem(24px), rem(30px))
+
+=text-lvl-3
+  +text-lvl(rem(32px), rem(40px))
+
+  +tablet
+    +text-lvl(rem(28px), rem(34px))
+
+  +mobile
+    +text-lvl(rem(18px), rem(24px))
+
+=text-lvl-4
+  +text-lvl(rem(24px), rem(30px))
+
+  +tablet
+    +text-lvl(rem(20px), rem(26px))
+
+  +mobile
+    +text-lvl(rem(16px), rem(20px))
+
+=base-padding-hor
+  padding: 0 rem(158px)
+
+=button($pad-left, $pad-right)
+  +text-lvl-4
+
+  display: block
+  padding: rem(10px) $pad-right rem(10px) $pad-left
+
+  font-weight: 600
+
+  background: $neon
+  clip-path: polygon(0 rem(18px), rem(18px) 0, 100% 0, 100% 100%, 0 100%)
+
+  cursor: pointer
+  transition: $transition-out
+
+  &:hover
+    background: #1bd1c5
+    transition: $transition-in
+
+=link
+  color: $neon
+
+  transition: $transition-out
+
+  &:hover
+    color: $neon-hover
+
+    transition: $transition-in
+
+
+
+
+
+
+
+
+
+
+
+
+

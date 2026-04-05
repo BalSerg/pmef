@@ -1,0 +1,2762 @@
+@import "fonts"
+
+@import "reset"
+
+@import "mixins"
+
+html,
+body
+  height: 100%
+
+body
+  +text-lvl-4
+
+  background: url('../images/background_base.png') left -50% repeat-y
+  background-size: cover
+
+a
+  +link
+
+.is-hidden
+  display: none !important
+
+.is-desktop,
+.is-no-mobile
+  display: block
+
+.is-tablet,
+.is-mobile,
+.is-adaptive
+  display: none
+
+.pmef
+  >div:first-child
+    padding: 0
+    max-width: inherit
+    margin-bottom: rem(24px)
+
+    background: url("../images/background.jpg") center top no-repeat
+    background-size: cover
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+
+      width: 100%
+      height: 285px
+      display: block
+
+      background: linear-gradient(180deg, #020810 0.73%, rgba(5, 19, 14, 0) 100%)
+
+      content: ""
+
+  >*,
+  >div:first-child > *
+    +base-padding-hor
+
+    max-width: rem(1604px)
+    padding-right: rem(20px)
+    padding-left: rem(20px)
+    box-sizing: border-box
+
+.header
+  position: relative
+  z-index: 2
+
+  padding-top: rem(67px) !important
+  margin: 0 auto rem(67px)
+  display: flex
+  align-items: self-start
+  justify-content: space-between
+
+  &-logo
+    display: flex
+    align-items: center
+    max-width: 26%
+    flex-wrap: wrap
+
+    >img
+      margin-bottom: rem(35px)
+      width: 38%
+
+      &:nth-child(2),
+      &:nth-child(4)
+        padding: 0 0 0 rem(32px)
+        margin-left: rem(32px)
+        border-left: 1px solid $white
+
+    >span
+      width: 51%
+      margin-left: 32px
+
+      color: $white
+      font-size: 16px
+      line-height: 20px
+
+  &-menu
+    position: relative
+
+    &-wrapper
+      position: relative
+
+      display: flex
+      align-items: center
+      padding: rem(10px) rem(48px)
+      box-sizing: border-box
+      gap: 0 rem(32px)
+
+      border: 1px solid rgba(0, 255, 240, 0.2)
+      background: linear-gradient(90deg, rgba(0, 255, 240, 0) 0%, rgba(0, 255, 240, 0.1) 50.52%, rgba(0, 255, 240, 0) 100%)
+      clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 8px, 100% 100%, 0 100%, 3px 100%, 0 calc(100% - 8px))
+
+    &__item
+      >a
+        color: $neon
+        opacity: 1
+        transition: $transition-out
+
+        &:hover
+          opacity: 0.7
+          transition: $transition-in
+
+    &:after,
+    &:before
+      position: absolute
+
+      display: block
+      height: 8px
+      width: 1px
+
+      background: rgba(0, 255, 240, 0.2)
+
+      content: ""
+
+    &:after
+      top: 0
+      right: 2px
+
+      transform: rotate(-32deg)
+
+    &:before
+      left: 1px
+      bottom: 0
+
+      height: 7px
+
+      transform: rotate(-25deg)
+
+  &-language
+    display: flex
+    align-items: center
+
+    line-height: rem(16px)
+
+    &__item
+      a
+        color: $white
+        opacity: 1
+        transition: $transition-out
+
+        &:hover
+          opacity: 0.7
+          transition: $transition-in
+
+      &:first-of-type
+        padding: 0 rem(10px) 0 0
+        margin: 0 rem(10px) 0 0
+        border-right: 1px solid $white
+
+        >a
+          color: $neon
+
+  .menu-mobile
+    display: none
+
+  .right-block
+    display: flex
+    flex-direction: column
+    align-items: end
+    gap: rem(48px) 0
+
+    &-wrapper
+      display: flex
+      gap: rem(32px)
+      flex-wrap: wrap
+      justify-content: right
+
+    .button
+      +button(29px, 20px)
+
+      display: flex
+      gap: 0 rem(10px)
+      align-items: center
+
+      font-weight: 600
+      white-space: nowrap
+      color: $black
+
+    .pseudo-button
+      +link
+      +text-lvl-3
+
+      font-weight: 500
+
+      cursor: pointer
+
+
+  &-mobile-scrolled
+    display: none
+
+  &-scrolled
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 2
+
+    padding: rem(48px) 0
+    width: 100%
+
+    background: #011F31
+
+    &-wrapper
+      max-width: rem(1604px)
+      margin: 0 auto
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: 0 rem(20px)
+      box-sizing: border-box
+
+      .right-block
+        flex-direction: row
+        align-items: stretch
+        gap: inherit
+        justify-content: space-between
+        width: 100%
+
+.top-area
+  position: relative
+  z-index: 1
+
+  margin: 0 auto rem(172px)
+
+  .top-block
+    position: relative
+    z-index: 2
+
+    &__title
+      +text-lvl-1
+
+      font-weight: 600
+      color: $white
+
+      margin: 0 0 rem(24px)
+
+    &__date
+      +text-lvl-3
+
+      margin: 0 0 rem(32px)
+
+      color: $white
+
+    &__sub-text
+      +text-lvl-4
+
+      color: $white
+
+    .button
+      +button(30px, 30px)
+
+      display: inline-flex
+      align-items: center
+      gap: 0 rem(10px)
+      margin: rem(56px) 0 0
+
+      color: $black
+
+    .is-mobile
+      display: none
+
+.run-line
+  padding: rem(42px) 0 !important
+  max-width: none !important
+
+  font-size: rem(48px)
+  line-height: rem(56px)
+
+  background: rgba(0, 0, 0, 0.6)
+  color: #10827C
+  overflow: hidden
+
+
+  &__wrapper
+    display: flex
+    flex-wrap: nowrap
+    white-space: nowrap
+
+  &__item
+    padding: 0 rem(24px) 0 0
+    margin: 0 rem(24px) 0 0
+    border-right: 2px solid $blue
+
+  span
+    margin: 0 rem(4px) 0 0
+
+    color: $blue
+
+.program
+  max-width: rem(1604px)
+  margin: 0 auto rem(172px)
+
+  color: $white
+
+  &-title
+    +text-lvl-1
+
+    margin: 0 0 rem(32px)
+
+    font-weight: 600
+
+  &-text
+    +text-lvl-4
+
+    margin: 0 0 rem(32px)
+
+  &-list
+    +text-lvl-4
+
+    &__item
+      margin: 0 0 rem(32px)
+
+      >div
+        position: relative
+
+        margin: 0 0 rem(8px)
+        padding: 0 0 0 22px
+
+        &:last-of-type
+          margin: 0
+
+        &:first-of-type
+          &:before
+            position: absolute
+            top: 10px
+            left: 0
+
+            display: block
+            width: 8px
+            height: 8px
+
+            background: $neon
+            border-radius: 50%
+
+            content: ""
+
+        >span
+          font-weight: 600
+
+  &-end
+    +text-lvl-4
+
+    margin: 0 0 rem(56px)
+
+  &-link
+    display: flex
+    align-items: center
+    gap: 0 rem(10px)
+
+    opacity: 1
+    transition: $transition-out
+    cursor: pointer
+
+    &:hover
+      opacity: 0.8
+      transition: $transition-in
+
+.bottom-block
+  display: flex
+  gap: 0 rem(32px)
+  align-items: center
+  flex-wrap: wrap
+  max-width: rem(1604px)
+  padding: 0 rem(20px)
+  box-sizing: border-box
+  margin: 0 auto rem(100px)
+
+  color: $white
+
+  &__img
+    max-width: rem(75px)
+    flex-shrink: 0
+
+    >img
+      width: 100%
+
+  &__title
+    +text-lvl-2
+
+    width: calc(100% - 75px - 32px)
+
+    font-weight: 600
+
+  &__list
+    flex-basis: 100%
+    margin: rem(32px) 0 0
+
+    >li
+      display: flex
+      align-items: center
+      margin: 0 0 rem(8px)
+      gap: 0 rem(10px)
+
+      &:last-of-type
+        margin: 0
+
+      &:before
+        display: block
+        width: 8px
+        height: 8px
+
+        background: $neon
+        border-radius: 50%
+
+        content: ""
+  &__link
+    +text-lvl-3
+
+    display: flex
+    flex-basis: 100%
+    gap: 0 rem(8px)
+    align-items: center
+    margin: rem(56px) 0 0
+
+    color: $neon
+
+    cursor: pointer
+
+.invitation
+  margin: 0 auto rem(172px)
+
+  &-title
+    position: relative
+
+    display: flex
+    align-items: center
+    gap: 0 rem(40px)
+    margin: 0 0 rem(80px)
+
+    &:before
+      position: absolute
+      left: rem(-143px)
+      top: rem(21px)
+
+      display: block
+      width: rem(143px)
+      height: rem(134px)
+
+      background: url("../images/x-element.svg") top left no-repeat
+
+      content: ""
+
+    >div
+      font-size: rem(128px)
+      line-height: rem(130px)
+      font-weight: 700
+      color: $blue
+
+    >span
+      +text-lvl-2
+
+      font-weight: 600
+      color: $white
+
+      >br
+        display: none
+
+      >article
+        display: inline
+        color: $blue
+
+.for-stages
+  background: rgba(0, 0, 0, 0.3)
+  padding-top: rem(180px)
+  padding-bottom: rem(180px)
+  max-width: inherit
+
+.big-stages
+  max-width: rem(1604px)
+  padding: 0 rem(20px)
+  margin: 0 auto
+
+  &__title
+    +text-lvl-1
+
+    margin: 0 0 rem(24px)
+
+    color: $white
+    font-weight: 600
+
+  &__text
+    +text-lvl-3
+
+    color: $white
+
+    margin: 0 0 rem(56px)
+
+  &__button
+    +text-lvl-3
+    +link
+
+    display: flex
+    align-items: center
+    gap: 0 rem(10px)
+
+    font-weight: 600
+
+    cursor: pointer
+
+    &.active
+      display: none
+
+    &:after
+      width: rem(8px)
+      height: rem(8px)
+      display: block
+
+      border-width: 2px 2px 0 0
+      border-style: solid
+      border-color: $neon
+
+      content: ""
+      transform: rotate(135deg)
+
+.stages
+  display: flex
+  align-items: self-start
+  gap: 0 rem(60px)
+  height: 0
+  margin: 0 auto
+  box-sizing: border-box
+
+  color: $white
+
+  transform: scaleY(0)
+  transform-origin: left top
+  transition: $transition-out
+
+  &.active
+    transform: scaleY(1)
+    transition: $transition-in
+
+  &-info
+    max-width: rem(632px)
+    flex-shrink: 0
+
+  &-title
+    +text-lvl-1
+
+    font-weight: 600
+
+    margin: 0 0 rem(40px)
+
+    &-mobile
+      display: none
+
+  &-text1
+    margin: 0 0 rem(24px)
+
+  &-subtitle
+    margin: 0 0 rem(15px)
+
+    font-weight: 600
+    color: $blue
+
+  &-text2
+    margin: 0 0 rem(56px)
+
+  &-buttons
+    display: flex
+    align-items: center
+    gap: 0 rem(32px)
+
+    .button
+      +button(22px, 17px)
+
+      font-weight: 600
+
+    .link
+      +text-lvl-4
+      +link
+
+      display: flex
+      align-items: center
+      gap: 0 rem(10px)
+
+      font-weight: 600
+
+      cursor: pointer
+
+      &:after
+        width: rem(8px)
+        height: rem(8px)
+        display: block
+        margin: 4px 0 0
+
+        border-width: 2px 2px 0 0
+        border-style: solid
+        border-color: $neon
+
+        content: ""
+        transform: rotate(-45deg)
+
+  &__item
+    position: relative
+
+    >div
+      margin: 0 0 rem(38px)
+      padding: rem(60px) rem(75px) rem(48px)
+      box-sizing: border-box
+
+      background: rgba(0, 0, 0, 0.2)
+      clip-path: polygon(0 12px, 28% 12px, 34% 0,calc(100% - 48px) 0, calc(100% - 18px) 10px, calc(100% - 18px) 31%, 100% calc(31% + 7px), 100% 100%, 9% 100%, 0 calc(100% - 27px))
+
+    &:before,
+    &:after
+      position: absolute
+
+      display: block
+
+      content: ""
+
+    &:before
+      left: 0
+      top: rem(90px)
+
+      height: rem(41px)
+      width: rem(2px)
+
+      background: $neon
+
+    &:after
+      top: rem(-25px)
+      right: 36%
+      width: rem(104px)
+      height: rem(52px)
+
+      background: url("../images/scew-element.png") 0 0 no-repeat
+      background-size: cover
+
+    &:last-of-type
+      margin: 0
+
+    &-title
+      +text-lvl-3
+
+      margin: 0 0 rem(24px)
+
+      font-weight: 600
+      color: $blue
+
+    &-datetime
+      display: flex
+      gap: 0 rem(27px)
+      margin: 0 0 rem(24px)
+
+      color: $white
+
+      >div
+        display: flex
+        align-items: center
+        gap: 0 rem(16px)
+
+.final.result-team.result-cert
+  padding-top: rem(148px)
+
+  .result-cert__title
+    +text-lvl-1
+
+    margin: 0 0 rem(80px)
+
+  .result-cert__text
+    margin: 0 0 rem(24px)
+
+    font-size: rem(48px)
+    line-height: rem(56px)
+    text-align: center
+    color: $white
+    font-weight: 600
+
+  .result-cert__item:first-of-type .result-cert__item-data:nth-of-type(2) > b
+    top: -3.5rem
+
+.map
+  max-width: rem(1604px)
+  margin: 0 auto rem(24px)
+
+  &__title
+    margin: 0 0 rem(24px)
+
+    font-size: rem(48px)
+    line-height: rem(56px)
+    font-weight: 600
+    text-align: center
+    color: $white
+
+  &__text
+    +text-lvl-4
+
+    margin: 0 0 rem(80px)
+
+    color: $white
+    text-align: center
+
+  &-tabs
+    display: flex
+
+    &__item
+      +text-lvl-3
+
+      width: calc(100% / 3)
+      padding: rem(36px) 0 rem(30px)
+
+      text-align: center
+      font-weight: 600
+
+      background: #14A59C
+
+      transition: $transition-in
+      cursor: pointer
+
+      &:nth-of-type(1),
+      &:nth-of-type(4)
+        clip-path: polygon(0 0, 4.2% 0, 5.5% 4px, 39.3% 4px, 40.5% 0, 81.1% 0, 82.4% 4px, 97% 4px, 100% 14px, 100% 100%, 0 100%)
+
+      &:nth-of-type(2),
+      &:nth-of-type(5)
+        clip-path: polygon(0 14px, 3% 4px, 39.3% 4px, 40.3% 0, 80.7% 0, 81.1% 0, 82% 4px, 97% 4px, 100% 14px, 100% 100%, 0 100%)
+
+      &:nth-of-type(3)
+        clip-path: polygon(0 14px, 2.5% 4px, 17% 4px, 18.3% 0, 58.9% 0, 60.2% 4px, 94% 4px, 95.2% 0, 100% 0, 100% 100%, 0 100%)
+
+      &.active,
+      &:hover
+        background: $neon
+
+        transition: $transition-in
+
+  &-for-tabs
+    display: flex
+    height: rem(736px)
+
+    //background: rgba(0, 0, 0, 0.2)
+    background: url("../images/back-map.png") top left no-repeat
+    //clip-path: polygon(0 0, 100% 0, 100% 27.8%, 98.5% 29.4%, 98.5% calc(100% - 15px), 96.8% 100%, 21.7% 100%, 17.8% calc(100% - 20px), 0 calc(100% - 20px))
+    color: $white
+
+    &__item
+      width: 0
+      height: 0
+      overflow: hidden
+
+      &.active
+        width: 100%
+        max-width: 419px
+        height: 100%
+
+div:not([class]) + .block-video
+  .block-video__title
+    margin: 0 0 rem(24px)
+
+.block-video
+  max-width: rem(1604px)
+  margin: 0 auto rem(172px)
+  padding-top: rem(148px)
+
+  &__title,
+  &__text
+    margin: 0 0 rem(80px)
+
+    font-weight: 600
+    text-align: center
+    color: $white
+
+  &__title
+    +text-lvl-1
+
+  &__text
+    +text-lvl-2
+
+  &__sub-title
+    +text-lvl-3
+
+    margin: 0 0 rem(80px)
+
+    color: $white
+    text-align: center
+
+  &__wrapper
+    position: relative
+
+    .poster-video
+      position: absolute
+      left: 0
+      top: 0
+      z-index: 0
+
+      height: 100%
+      width: 100%
+      display: flex
+
+      background: #333333
+
+    .button-play
+      position: relative
+
+      width: 144px
+      height: 144px
+      margin: auto
+
+      border: 1px solid #fff
+      border-radius: 50%
+
+      cursor: pointer
+
+      > span,
+      > span:before,
+      > span:after
+        width: 25px
+        height: 25px
+
+        border-top-right-radius: 30%
+
+      > span
+        position: absolute
+        top: 55px
+        left: 55px
+
+        background: #fff
+
+        transform: rotate(-90deg) skewX(-30deg) scale(1, 0.866)
+
+      > span:after,
+      > span:before
+        position: absolute
+        top: 0
+        left: 0
+
+        background-color: inherit
+        content: ""
+
+      > span:before
+        transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%)
+
+      > span:after
+        transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%)
+
+    & > iframe
+      width: 100%
+      height: rem(800px)
+
+  .button
+    +button(30px, 30px)
+    +text-lvl-4
+
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 320px
+    margin: 80px auto 0
+    gap: 0 12px
+
+    color: $black
+
+    cursor: pointer
+
+.result-team
+  &.result-cert
+    .result-cert__title
+      margin: 0 0 rem(24px)
+
+    .result-cert__item:first-of-type .result-cert__item-data:nth-of-type(2) > b
+      top: -3.5rem
+
+  &__link
+    display: flex
+    justify-content: center
+    margin: 0 0 rem(80px)
+
+    >a
+      +text-lvl-3
+
+      display: inline-flex
+      align-items: center
+      gap: 0 rem(8px)
+
+      font-weight: 600
+      color: $neon
+
+      opacity: 1
+      transition: $transition-out
+
+      cursor: pointer
+
+      &:hover
+        opacity: 0.8
+        transition: $transition-in
+
+  .result-cert
+    &__item
+      &-info
+        min-width: rem(225px)
+        max-width: 21.6vw
+        flex-shrink: 0
+
+      >div
+        &:nth-of-type(2),
+        &:nth-of-type(5),
+        &:nth-of-type(6)
+          max-width: rem(120px)
+
+        &:nth-of-type(3)
+          max-width: rem(145px)
+
+        &:nth-of-type(4)
+          max-width: rem(360px)
+
+      &:not(:first-child)
+        .result-cert__item-data
+          &:nth-of-type(3),
+          &:nth-of-type(4),
+          &:nth-of-type(5)
+            color: #FF374E
+
+          &:nth-of-type(6)
+            color: #04E551
+
+.result-cert
+  max-width: rem(1604px)
+  margin: 0 auto rem(172px)
+
+  &__title
+    font-size: rem(48px)
+    line-height: rem(56px)
+    text-align: center
+    font-weight: 600
+    color: $white
+
+    margin: 0 0 rem(80px)
+
+  &__wrapper
+    margin: 0 0 rem(28px)
+    overflow: hidden
+
+    transition: $transition-in
+
+  &__item
+    +text-lvl-4
+
+    display: flex
+    align-items: center
+    padding: rem(24px)
+    justify-content: space-between
+
+    color: $white
+
+    &:first-of-type
+      font-weight: 600
+
+      background: $neon
+      color: $black
+
+      .result-cert__item-data:nth-of-type(2)
+        position: relative
+
+        >b
+          position: absolute
+          top: rem(-24px)
+          left: 100%
+
+          display: block
+          width: 100%
+          height: 100%
+
+          border: 1px solid #04CBF5
+          background: linear-gradient(93.36deg, rgba(20, 165, 156, 0.53) 6.32%, rgba(12, 202, 191, 0.13) 52.03%, rgba(0, 255, 240, 0.05) 99.69%)
+
+          transform: rotate(90deg)
+          transform-origin: left top
+
+          transition: $transition-in
+
+    &-info
+      max-width: rem(415px)
+      width: 100%
+      display: flex
+      align-items: center
+      gap: 0 rem(38px)
+
+      >div
+        +text-lvl-3
+
+        font-weight: 600
+
+    &-data
+      width: 100%
+      max-width: calc((100% - #{rem(415px)}) / 5)
+
+      text-align: center
+
+      >span
+        position: relative
+        z-index: 1
+
+  &__button
+    +text-lvl-4
+
+    position: relative
+
+    padding: rem(8px) rem(40px)
+    display: flex
+    margin: auto
+
+    font-weight: 600
+    color: $white
+
+    border: 2px solid $white
+    clip-path: polygon(0 18px, 18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%)
+    cursor: pointer
+    opacity: 1
+    transition: $transition-out
+
+    &:before,
+    &:after
+      position: absolute
+
+      height: 2px
+      width: 24px
+      display: block
+
+      background: $white
+
+      content: ""
+      transform: rotate(-45deg)
+
+    &:before
+      top: 6px
+      left: -4px
+
+    &:after
+      bottom: 7px
+      right: -4px
+
+    &:hover
+      opacity: 0.8
+      transition: $transition-in
+
+.news
+  padding-top: rem(152px)
+  padding-bottom: rem(152px)
+  margin: 0 auto rem(24px)
+  max-width: none
+  overflow: hidden
+
+  background: url("../images/background-neon.png") center center no-repeat
+  background-size: cover
+  color: $white
+
+  &-content
+    position: relative
+
+    max-width: rem(1604px)
+    padding: 0 rem(20px)
+    margin: 0 auto
+    box-sizing: border-box
+
+  &-title
+    +text-lvl-1
+
+    margin: 0 0 rem(80px)
+
+    font-weight: 600
+
+  &-wrapper
+    position: static !important
+    margin: 0 0 0 rem(-32px)
+
+    section
+      padding: 0 rem(32px)
+
+    .slick-arrow
+      position: absolute
+      top: 0
+
+      width: rem(75px)
+      height: rem(75px)
+
+      font-size: 0
+
+      border-radius: 50%
+      background: rgba(0, 0, 0, 0.2)
+
+      cursor: pointer
+
+      &:hover
+        &:after
+          border-color: $neon
+
+          transition: $transition-in
+
+      &:after
+        position: absolute
+        top: 28px
+        left: 28px
+
+        display: block
+        width: 15px
+        height: 15px
+
+        border-style: solid
+        border-color: rgba(255, 255, 255, 0.7)
+        border-width: 3px 3px 0 0
+
+        content: ""
+        transition: $transition-out
+
+    .slick-prev
+      right: 109px
+      transform: rotate(-135deg)
+
+    .slick-next
+      right: 0
+      transform: rotate(45deg)
+
+
+    .slick-list
+      width: calc(100% + 9vw)
+
+  &__item
+    +text-lvl-4
+
+    padding: rem(57px) rem(32px) rem(61px)
+
+    background: rgba(0, 0, 0, 0.2)
+    clip-path: polygon(0 #{rem(16px)}, 6% 0, 41% 0, 43.5% 5px, 79% 5px, 81.7% 0, 86.1% 1px, 88.8% 9px, calc(100% - 14px) 9px, 100% 14px, 100% calc(100% - 22px), calc(100% - #{rem(52px)}) 100%, 45.7% 100%, 42.5% calc(100% - 9px), 0 calc(100% - 9px))
+
+    &-info
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin: 0 0 rem(36px)
+
+      >span
+        text-transform: uppercase
+        color: $neon
+
+    &-title
+      +text-lvl-3
+
+      margin: 0 0 rem(12px)
+
+      font-weight: 500
+
+    &-text
+      color: rgba(255, 255, 255, 0.7)
+
+.faq
+  margin: 0 auto rem(24px)
+  padding-top: rem(148px)
+  max-width: 1048px
+
+  &-title
+    +text-lvl-1
+
+    margin: 0 0 rem(56px)
+
+    text-align: center
+    color: $white
+    font-weight: 600
+
+  &__item
+    padding: rem(24px) 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08)
+
+    cursor: pointer
+
+    &:nth-of-type(2)
+      border-top: 1px solid rgba(255, 255, 255, 0.08)
+
+    &-static
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      >div
+        +text-lvl-4
+
+        font-weight: 700
+        color: $white
+
+      >span
+        position: relative
+
+        width: 18px
+        height: 18px
+        display: block
+
+        &:before,
+        &:after
+          position: absolute
+
+          display: block
+
+          background: $neon
+
+          content: ""
+
+        &:before
+          top: 8px
+          left: 0
+
+          height:  2px
+          width: 18px
+
+        &:after
+          left: 8px
+          top: 50%
+
+          width:  2px
+          height: 18px
+
+          transition: $transition-out
+          transform: translateY(-50%)
+
+    &-expand
+      +text-lvl-4
+
+      height: 0
+      margin: rem(10px) 0 0
+
+      color: $white
+
+      opacity: 0
+      transform: scaleY(0)
+      transform-origin: top
+      transition: $transition-out
+
+      ul
+        margin: rem(10px) 0 0
+
+        li
+          position: relative
+          margin: 0 0 rem(10px)
+          padding: 0 0 0 18px
+
+          &:last-of-type
+            margin: 0
+
+          &:before
+            position: absolute
+            left: 0
+            top: rem(10px)
+
+            width: rem(8px)
+            height: rem(8px)
+            display: block
+            box-sizing: border-box
+
+            border-radius: 50%
+
+            content: ""
+
+      >ul
+        >li
+          &:before
+            background: $neon
+
+          >ul
+            >li
+              &:before
+                border: 1px solid $neon
+
+    &.active
+      .faq__item-static
+        >span
+          &:after
+            height: 0
+
+            transition: $transition-in
+
+      .faq__item-expand
+        height: auto
+
+        opacity: 1
+        transform: scaleY(1)
+        transition: $transition-in
+
+.partners
+  margin: 0 auto rem(172px)
+  padding-top: rem(148px)
+
+  &-title
+    +text-lvl-1
+
+    margin: 0 0 rem(56px)
+
+    font-weight: 600
+    color: $white
+    text-align: center
+
+  &-wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    max-width: none
+
+    >div
+      &:nth-of-type(1),
+      &:nth-of-type(3),
+      &:nth-of-type(5)
+        padding: 0 rem(30px) 0 0
+        margin: 0 rem(30px) 0 0
+
+        border-right: 2px solid $white
+
+.footer
+  position: relative
+  z-index: 5
+
+  padding-top: rem(180px) !important
+  padding-bottom: rem(180px) !important
+  margin: 0 auto
+  max-width: inherit !important
+
+  background: #14A59C
+  clip-path: polygon(0 8.5%, 2% 0, 41.7% 0, 43.1% 6.7%, 80.2% 6.7%, calc(80.2% + 24px) 10px, 85.9% 10px, calc(85.9% + 54px) 74px, 97.7% 74px, 100% 124px, 100% 100%, 0 100%)
+
+  &-wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+    max-width: rem(1604px)
+    margin: 0 auto
+
+    >img
+      &:nth-child(1)
+        order: 1
+        width: 22.5%
+
+      &:nth-child(2)
+        order: 2
+        width: 18%
+
+      &:nth-child(3)
+        order: 3
+        width: 14%
+
+      &:nth-child(4)
+        width: 18%
+        order: 4
+
+      &:nth-child(5)
+        width: 16%
+        order: 5
+
+
+@media screen and (max-width: 1170px)
+  .header
+    display: block
+    padding-top: rem(30px) !important
+    margin: 0
+
+    &-logo
+      max-width: inherit
+      width: auto
+      justify-content: space-between
+      margin: 0 0 rem(32px)
+      gap: 8px 0
+
+      >img
+        width: auto
+
+        &.is-desktop
+          display: none
+
+        &.is-adaptive
+          display: block
+
+        &,
+        &:nth-child(even)
+          border: 0
+          margin: 0
+          padding: 0
+
+        &:nth-child(3)
+          max-width: 7.5rem
+
+        &:nth-of-type(5)
+          max-width: 140px
+
+      .is-adaptive.no-img
+        display: block
+        width: 100%
+
+      span
+        margin-top: 15px
+        width: auto
+
+    &-menu
+      order: 1
+      width: 100%
+
+      &-wrapper
+        padding: rem(10px)
+        justify-content: space-between
+
+    &-language
+      order: 4
+
+    .button
+      order: 2
+
+    .pseudo-button
+      order: 3
+
+    .right-block
+      gap: rem(32px)
+
+      &-wrapper
+        justify-content: space-between
+        width: 100%
+
+        .button
+          order: 3
+          margin-left: auto
+
+    &-scrolled
+      .header-menu-wrapper
+        .header-menu__item:last-of-type
+          display: none
+
+  .top-area
+    .top-block
+      padding-top: rem(100px)
+
+    &:before
+      display: none
+
+  .stages-info
+    max-width: inherit
+    flex-shrink: 1
+
+  .condition__item-info
+    >span
+      br
+        display: none
+
+@media screen and (min-width: 1024px) and (max-width: 1207px)
+  .final
+    .result-cert__item:first-of-type .result-cert__item-data:nth-of-type(2) > b
+      top: rem(-54px)
+
+  .result-team
+    .result-cert__item:first-of-type .result-cert__item-data:nth-of-type(2) > b
+      top: rem(-54px)
+
+@media screen and (min-width: 1152px) and (max-width: 1285px)
+  .result-cert:not(.result-team)
+    .result-cert__item:first-of-type .result-cert__item-data:nth-of-type(2) > b
+      top: rem(-40px)
+
+@media screen and (max-width: 1650px)
+  .news-wrapper .slick-list
+    width: calc(100% + 40px)
+
+@include tablet
+  .is-desktop,
+  .is-mobile
+    display: none
+
+  .is-adaptive,
+  .is-tablet,
+  .is-no-mobile
+    display: block
+
+  .pmef
+    >div:first-child
+      background-size: cover
+
+      margin-bottom: 0
+
+      >div:first-child:before
+        display: none
+
+  .header
+    &-scrolled
+      padding: rem(30px) 0
+
+    .right-block-wrapper
+      gap: rem(32px) rem(25px)
+
+    &-menu
+      margin-left: auto
+      order: 1
+      width: 100%
+
+      &-wrapper
+        justify-content: space-between
+
+    .pseudo-button
+      order: 3
+
+    .right-block-wrapper
+      .button
+        order: 2
+
+  .top-area
+    margin-bottom: rem(100px)
+
+    .top-block
+      padding-top: rem(100px)
+      margin-bottom: rem(112px)
+
+      &__title
+        br
+          display: none
+
+      &__date
+        margin: 0 0 rem(24px)
+
+      .button
+        margin: rem(40px) 0 0
+
+  .run-line
+    padding: rem(30px) 0 !important
+
+    font-size: rem(40px)
+    line-height: rem(44px)
+
+  .program
+    margin-bottom: rem(100px)
+
+    &__title
+      margin: 0 0 rem(32px)
+
+    &-text
+      margin: 0 0 rem(24px)
+
+    &-list
+      margin: 0 0 rem(32px)
+
+      &__item
+        margin: 0 0 rem(16px)
+
+        &:last-of-type
+          margin: 0
+
+  .bottom-block
+    gap: 0 rem(20px)
+    margin-bottom: rem(100px)
+
+    &__title
+      br
+        display: none
+
+    &__link
+      display: none
+
+    &__list
+      margin: rem(16px) 0 0
+
+  .invitation
+    margin-bottom: rem(100px)
+
+    &-title
+      margin: 0 0 rem(32px)
+
+      >div
+        font-size: rem(97px)
+        line-height: rem(90px)
+
+      >span
+        +text-lvl-3
+
+        >br
+          display: block
+
+      &:before
+        display: none
+
+  .for-stages
+    padding-top: rem(100px)
+    padding-bottom: rem(100px)
+    margin-bottom: rem(100px)
+
+  .big-stages
+    &__title
+      margin: 0 0 rem(32px)
+
+  .for-stages
+    margin-bottom: 0
+
+  .stages
+    flex-direction: column
+
+    &-title
+      display: none
+
+    &-title-mobile
+      +text-lvl-1
+
+      display: block
+      margin: 0 0 rem(40px)
+
+      font-weight: 600
+
+    &-info
+      order: 2
+
+    &-wrapper
+      order: 1
+
+    &__item
+      margin: 0 0 rem(30px)
+
+      >div
+        padding: rem(40px) rem(24px) rem(32px)
+
+      &:last-of-type
+        margin: 0 0 rem(40px)
+
+      &-title
+        margin: 0 0 rem(20px)
+
+      &-datetime
+        margin: 0 0 rem(20px)
+        gap: 0 rem(20px)
+
+      &:before
+        left: 0
+        top: rem(69px)
+
+        height: rem(30px)
+        width: rem(2px)
+
+      &:after
+        top: rem(-25px)
+        right: 36%
+        width: rem(104px)
+        height: rem(52px)
+
+  .final.result-team.result-cert
+    padding-top: rem(100px)
+
+    .result-cert__title
+      margin: 0 0 rem(32px)
+
+    .result-cert__text
+      margin: 0 0 rem(24px)
+
+      font-size: rem(40px)
+      line-height: rem(44px)
+
+    .result-team__link
+      margin: 0 0 rem(24px)
+
+  .map
+    margin: 0 auto
+
+    &__title
+      font-size: rem(40px)
+      line-height: rem(44px)
+
+    &__text
+      +text-lvl-4
+
+      margin: 0 0 rem(56px)
+
+    &__wrapper
+      align-items: flex-end
+      margin: 0 rem(-20px)
+
+      &.is-adaptive
+        display: flex
+
+      .slick-list
+        padding: 0 rem(20px) rem(16px) !important
+
+    &__item
+      margin: 0 rem(5px)
+      width: auto
+
+      &-info
+        display: flex
+        align-items: center
+        gap: 0 16px
+        margin: 0 0 20px
+
+        >span
+          font-size: 28px
+          line-height: 34px
+
+          color: $neon
+          font-weight: 600
+
+      >article
+        position: relative
+
+        >video
+          width: 100%
+
+      &-image
+        position: relative
+        margin: 0 0 16px
+
+        >img
+          width: 100%
+
+      &-events
+        margin: 0
+        overflow: auto
+
+        >li
+          display: flex
+          align-items: self-start
+          gap: 0 10px
+
+          font-size: 16px
+          line-height: 20px
+
+          padding: 0 0 rem(16px)
+
+          &:last-of-type
+            padding: 0
+
+          >span
+            color: $neon
+
+          >div
+            color: $white
+            padding-right: 15px
+
+  div:not([class]) + .block-video
+    .block-video__title
+      margin: 0 0 rem(16px)
+
+  .block-video
+    margin-bottom: rem(100px)
+    padding-top: rem(100px)
+
+    &__title,
+    &__text
+      margin: 0
+
+    &__title
+      margin-bottom: rem(32px)
+
+    &__text
+      margin-bottom: rem(56px)
+
+    &__sub-title
+      margin: 0 0 rem(56px)
+
+    &__wrapper
+      >iframe
+        height: rem(496px)
+
+  .result-team
+    .result-cert
+      &__item
+        >div
+          max-width: inherit !important
+
+        &-info
+          min-width: inherit
+          flex-shrink: inherit
+
+
+        &-data
+          >ul
+            >li
+              span
+                color: #FF374E
+
+              &:last-of-type
+                span
+                  color: #04E551
+
+    &__link
+      margin: 0 0 rem(24px)
+
+  .result-cert
+    margin-bottom: rem(100px)
+
+    &__title
+      font-size: rem(40px)
+      line-height: rem(44px)
+
+      margin: 0 0 rem(36px)
+
+    &__wrapper
+      margin: 0 0 rem(56px)
+
+    &__item
+      display: block
+      padding: rem(20px) 0 0
+
+      &:first-of-type
+        background: transparent
+
+        font-weight: 400
+
+      &-info
+        position: relative
+
+        display: flex
+        align-items: center
+        gap: 0 rem(32px)
+        max-width: none
+        margin: 0 0 rem(18px)
+
+        color: $white
+
+        >div
+          font-size: 28px
+          line-height: 34px
+          font-weight: 600
+
+        >span
+          width: 100%
+          max-width: rem(160px)
+
+        >article
+          margin: 0 0 0 rem(68px)
+
+        >b
+          position: relative
+
+          margin-left: auto
+          display: block
+          width: rem(24px)
+          height: rem(24px)
+          flex-shrink: 0
+
+          transform: scale(1, -1)
+          transition: $transition-out
+          transform-origin: center
+
+          &:before
+            position: absolute
+            top: 10px
+            left: 10px
+
+            display: block
+            width: 8px
+            height: 8px
+
+            border-style: solid
+            border-color: $neon
+            border-width: 2px 2px 0 0
+
+            transform: rotate(-45deg)
+            content: ""
+
+        &.active
+          b
+            transform: scale(1, 1)
+            transition: $transition-in
+
+          & + .result-cert__item-data
+            transform: scaleY(1)
+            transition: $transition-in
+
+      &-data
+        display: block
+        max-width: none
+        height: 0
+
+        transform: scaleY(0)
+        transform-origin: top
+        transition: $transition-out
+
+        >ul
+          >li
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: rem(14px) 0
+            gap: 0 rem(10px)
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08)
+
+            &:first-of-type
+              border-top: 1px solid rgba(255, 255, 255, 0.08)
+
+            div
+              color: $white
+              text-align: left
+
+            span
+              color: #04E551
+
+  .news
+    padding-top: rem(100px)
+    padding-bottom: rem(100px)
+    margin-bottom: 0
+
+    &-content
+      padding: 0
+
+    &-title
+      margin: 0 0 rem(56px)
+
+    &-wrapper
+      margin: 0 0 0 rem(-10px)
+
+      .slick-arrow
+        width: rem(56px)
+        height: rem(56px)
+
+        &:after
+          top: 22px
+          left: 18px
+
+          width: 12px
+          height: 12px
+
+      .slick-prev
+        right: 76px
+
+      section
+        padding: 0 rem(10px)
+
+    &__item
+      padding: rem(48px) rem(20px) rem(41px)
+
+      &-info
+        margin: 0 0 rem(32px)
+
+  .partners
+    margin: 0 auto rem(100px)
+    padding-top: rem(100px)
+  .faq
+    padding-top: rem(100px)
+
+    &__item
+      &-static
+        gap: 0 rem(18px)
+
+      &.active
+        .faq__item-expand
+          padding: 0 0 rem(16px)
+
+  .footer
+    padding-top: rem(100px) !important
+    padding-bottom: rem(100px) !important
+
+    clip-path: polygon(0 28px, 24px 0, 61.5% 0, calc(61.5% + 18px) 23px, 100% 23px, 100% 100%, 0 100%)
+
+    &-wrapper
+      >img
+        &:nth-child(3)
+          order: 5
+
+        &:nth-child(4)
+          order: 3
+
+        &:nth-child(5)
+          order: 4
+
+@include mobile
+  body
+    background: url('../images/background-dropdown.png') left top repeat-y
+    background-size: cover
+
+  .is-desktop,
+  .is-tablet,
+  .is-no-mobile
+    display: none
+
+  .is-mobile
+    display: block
+
+  .pmef
+    overflow: hidden
+
+  .header
+    &-logo
+      margin: 0 0 rem(20px)
+      gap: 12px 0
+
+      >img
+        &:nth-child(1)
+          width: rem(67px)
+
+        &:nth-child(2)
+          width: rem(52px)
+
+        &:nth-child(3)
+          width: rem(57px)
+
+        &:nth-child(4)
+          width: rem(64px)
+
+        &:nth-of-type(5)
+          width: rem(65px)
+
+      >span
+        margin: 6px 0 0 8px
+
+        font-size: 9px
+        line-height: 12px
+
+    .right-block
+      display: none
+
+    &.dropped
+      background: #011F31
+
+    .menu-mobile
+      position: relative
+
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      .burger
+        position: relative
+
+        width: rem(20px)
+        height: rem(14px)
+        display: flex
+
+        >span,
+        &:after,
+        &:before
+          width: 100%
+          height: 2px
+          display: block
+
+          background: $neon
+
+        >span
+          margin: auto
+
+        &:after,
+        &:before
+          position: absolute
+          left: 0
+
+          content: ""
+
+        &:after
+          bottom: 0
+
+        &:before
+          top: 0
+
+      .pseudo-button
+        +text-lvl-4
+        +link
+
+        font-weight: 600
+
+        color: $neon
+
+      &-language
+        display: flex
+        order: 3
+
+        &__item
+          &:last-of-type
+            border-left: 1px solid $white
+            padding-left: rem(8px)
+            margin-left: rem(8px)
+
+          >a
+            color: $white
+
+      &-dropdown
+        position: absolute
+        bottom: rem(-334px)
+        left: rem(-20px)
+        z-index: 1
+
+        width: 100%
+        padding: rem(40px) rem(20px)
+
+        background: #011F31
+
+        &__item
+          padding: 0 0 rem(12px)
+          margin: 0 0 rem(16px)
+
+          font-size: 18px
+          line-height: 24px
+          font-weight: 600
+
+          color: $white
+          border-bottom: 2px solid rgba(255, 255, 255, 0.1)
+
+          >a
+            position: relative
+
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 100%
+
+            color: $white
+
+            opacity: 1
+            transition: $transition-out
+
+            &:hover
+              opacity: 0.7
+              transition: $transition-in
+
+            &:after
+              position: relative
+              right: rem(12px)
+
+              display: block
+              height: rem(8px)
+              width: rem(8px)
+
+              border-style: solid
+              border-width: 2px 2px 0 0
+              border-color: $neon
+
+              transform: rotate(45deg)
+              content: ""
+
+          &:last-of-type
+            margin: 0
+
+    &-scrolled
+      display: none
+
+    .header-mobile
+      &-scrolled
+        position: fixed
+        top: 0
+        left: 0
+
+        padding: rem(20px) 0
+        width: 100%
+        display: block
+
+        background: #011F31
+
+        &-wrapper
+          max-width: rem(1604px)
+          padding: 0 rem(20px)
+
+  .top-area
+    margin-bottom: rem(64px)
+
+    .top-block
+      padding-top: rem(32px)
+      margin-bottom: rem(64px)
+
+      &__title
+        margin: 0 0 rem(16px)
+
+      &__text,
+      &__sub-text
+        margin: 0 0 rem(24px)
+
+      .button
+        +button(22px, 17px)
+
+        width: 100%
+        box-sizing: border-box
+        justify-content: center
+        display: flex
+
+        font-weight: 600
+
+  .run-line
+    padding: rem(20px) 0 !important
+
+    font-size: rem(24px)
+    line-height: rem(30px)
+
+  .program
+    margin-bottom: rem(100px)
+
+    &-title
+      margin: 0 0 rem(24px)
+
+    &__text
+      margin: 0 0 rem(16px)
+
+    &-list
+      margin: 0 0 rem(16px)
+
+      &__item
+        >div
+          padding: 0 0 0 14px
+
+          &:before
+            top: 8px
+
+            width: 4px
+            height: 4px
+
+    &-end
+      margin: 0 0 rem(40px)
+
+  .bottom-block
+    gap: 0 rem(10px)
+    align-items: self-start
+    flex-wrap: wrap
+    margin-bottom: rem(64px)
+
+    &__title
+      font-size: rem(16px)
+      line-height: rem(20px)
+
+    &__img
+      max-width: rem(41px)
+      margin: rem(4px) 0 0
+
+  .invitation
+    margin-bottom: rem(64px)
+
+    &-title
+      gap: 0 rem(16px)
+      margin: 0 0 rem(24px)
+
+      >div
+        font-size: rem(60px)
+        line-height: rem(60px)
+
+  .for-stages
+    padding-top: rem(64px)
+    padding-bottom: rem(64px)
+
+  .big-stages
+    &__title
+      margin: 0 0 rem(24px)
+
+    &__text
+      margin: 0 0 rem(40px)
+
+  .stages
+    &-wrapper
+      margin: 0 0 rem(24px)
+      max-width: 100%
+
+      .slick-list
+        padding: 0 !important //перебивка стилей slick
+        overflow: visible !important //перебивка стилей slick
+
+      .slick-track
+        display: flex !important //перебивка стилей slick
+
+    &__item
+      margin: 0 rem(5px) !important
+      height: auto !important //перебивка стилей slick
+
+      >div
+        padding: rem(27px) rem(16px) rem(44px)
+
+      &-title
+        margin: 0 0 rem(16px)
+
+      &-datetime
+        display: block
+        margin: 0 0 rem(16px)
+
+        >div
+          margin: 0 0 rem(12px)
+          gap: 0 rem(8px)
+
+          &:last-of-type
+            margin: 0
+
+      &:before
+        left: 0
+        top: rem(45px)
+
+        height: rem(20px)
+
+      &:after
+        top: rem(-23px)
+        right: 36%
+        width: rem(61px)
+        height: rem(48px)
+
+    &-buttons
+      display: block
+
+      .button
+        margin: 0 0 rem(24px)
+
+  .final.result-team.result-cert
+    padding-top: rem(64px)
+
+    .result-cert__text
+      font-size: rem(24px)
+      line-height: rem(30px)
+
+  .map
+    margin: 0 auto
+
+    &__title
+      font-size: rem(24px)
+      line-height: rem(30px)
+
+    &__text
+      margin: 0 0 rem(40px)
+
+    &__wrapper
+      align-items: flex-end
+      margin: 0 rem(-20px)
+
+      &.is-mobile
+        display: flex
+
+      .slick-list
+        padding: 0 rem(20px) rem(16px) !important
+
+  .result-cert
+    margin-bottom: rem(64px)
+
+    &__title
+      font-size: rem(40px)
+      line-height: rem(44px)
+
+      margin: 0 0 rem(16px)
+
+    &__wrapper
+      margin: 0 0 rem(40px)
+
+    &__item
+      &-info
+        gap: 0 rem(10px)
+
+        >article
+          margin: 0
+
+        >span
+          width: auto
+          max-width: rem(130px)
+          width: 100%
+
+  .news
+    padding-top: rem(64px)
+    padding-bottom: rem(64px)
+
+    &-title
+      margin: 0 0 rem(24px)
+    &-wrapper
+      .slick-arrow
+        width: rem(32px)
+        height: rem(32px)
+
+        &:after
+          top: 12px
+          left: 9px
+
+          width: 8px
+          height: 8px
+
+      .slick-prev
+        right: 44px
+
+  .block-video
+    margin-bottom: rem(64px)
+    padding-top: rem(64px)
+
+    &__title,
+    &__text
+      margin: 0 0 rem(24px)
+
+    &__wrapper
+      >iframe
+        height: rem(180px)
+
+      .button-play
+        width: 60px
+        height: 60px
+
+        > span,
+        > span:before,
+        > span:after
+          width: 10px
+          height: 10px
+
+        >span
+          left: 25px
+          top: 23px
+
+  .partners
+    margin: 0 auto rem(64px)
+    padding-top: rem(64px)
+
+    &-wrapper
+      flex-direction: column
+      gap: rem(20px) 0
+
+      >div
+        &:nth-of-type(1),
+        &:nth-of-type(3),
+        &:nth-of-type(5)
+          margin: 0
+          padding: 0
+
+          border: 0
+
+  .faq
+    margin: 0 auto
+    padding-top: rem(64px)
+    max-width: 767px
+
+    &-title
+      margin: 0 0 rem(24px)
+
+    &__item
+      padding: rem(16px) 0 0
+
+      &-static
+        >span
+          flex-shrink: 0
+
+      &-expand
+        ul
+          li
+            &:before
+              top: rem(5px)
+
+  .footer
+    padding-top: rem(64px) !important
+    padding-bottom: rem(64px) !important
+
+    clip-path: polygon(0 0,75% 0, calc(75% + 20px) 18px, 100% 18px, 100% 100%, 0 100%)
+
+    &-wrapper
+      max-width: rem(290px)
+      margin: 0 auto
+      flex-wrap: wrap
+
+      >img
+        width: rem(120px) !important
+        margin-bottom: rem(24px)
+
+        &:nth-child(2),
+        &:nth-child(5)
+          padding: 0 0 0 rem(24px)
+          margin-left: rem(24px)
+
+          border-left: 1px solid $white
+
+        &:nth-child(3)
+          margin-bottom: 0
+
+        &:last-of-type
+          width: rem(114px)
+
+      >span
+        order: 6
+        width: 50%
+        margin: 20px -15px 0 0
+
+        font-size: 10px
+        line-height: 12px
+        color: #fff
+
+.control-block
+  align-items: center
+  background: rgba(0,0,0,.7)
+  column-gap: 26px
+  display: flex
+  font-size: 24px
+  font-weight: 400
+  left: 0
+  line-height: 24px
+  padding: 32px 20px
+  position: absolute
+  top: 0
+
+.control-block__left
+  display: flex
+  flex-direction: column
+  row-gap: 6px
+
+.control-block__blue
+  align-items: center
+  color: #04cbf5
+  column-gap: 35px
+  display: flex
+  justify-content: space-between
+
+.control-block__icon
+  display: none
+
+.control-block__red
+  align-items: center
+  color: #ff374e
+  column-gap: 35px
+  display: flex
+  justify-content: space-between
+
+.control-block__right
+  align-items: center
+  color: grey
+  column-gap: 10px
+  display: flex
+  flex-direction: row-reverse
+
+.control-block__lines
+  margin-right: 16px
+
+.map-for-tabs
+  background: transparent
+  clip-path: none
+  height: auto
+
+.map-for-tabs__item video
+  height: auto
+  width: 100%
+
+.map__wrapper
+  height: auto
+
+.map-for-tabs__item,.map__wrapper
+  position: relative
+
+.map-for-tabs__item.active
+  max-width: 100%
+
+.map__logs
+  display: none
+
+.map-for-tabs__item.active .map__logs
+  display: block
+
+.map__logs
+  background: rgba(0,0,0,.7)
+  bottom: 9px
+  box-sizing: border-box
+  height: 460px
+  padding: 24px
+  position: absolute
+  right: 0
+  width: 420px
+
+.map__logs-title
+  color: #00fff0
+  font-size: 32px
+  font-weight: 500
+  line-height: 40px
+  margin-bottom: 16px
+
+.map__logs-list
+  display: flex
+  flex-direction: column
+  max-height: 348px
+  overflow-y: auto
+  row-gap: 16px
+
+.map__logs-list::-webkit-scrollbar
+  border-radius: 1px
+  width: 4px
+
+.map__logs-list::-webkit-scrollbar-track
+  background: rgba(0,0,0,.2)
+  border-radius: 1px
+
+.map__logs-list::-webkit-scrollbar-thumb
+  background: hsla(0,0%,100%,.3)
+  border-radius: 1px
+  box-shadow: 0 0 8px rgba(28,41,61,.05),0 2px 4px rgba(28,41,61,.06)
+
+.map__logs-item
+  align-items: flex-start
+  column-gap: 16px
+  display: flex
+  padding-right: 10px
+
+.map__logs-btn
+  align-items: center
+  background-color: transparent
+  border: 0
+  color: #00fff0
+  font-size: 18px
+  font-weight: 500
+  justify-content: center
+  line-height: 24px
+  margin: 24px auto 0
+  outline: 0
+
+.map__logs-time
+  color: #00fff0
+
+.map__logs-descr,
+.map__logs-time
+  font-size: 24px
+  font-weight: 400
+  line-height: 30px
+
+.map__logs-descr
+  color: #fff
+
+.map-tabs__item img,.map__logs-btn
+  display: none
+
+@media (max-width: 1024px)
+  .map-tabs__item
+    font-size: 1.8rem
+
+
+@include tablet
+  .control-block
+    flex-direction: column
+    font-size: 14px
+    font-weight: 400
+    line-height: 10px
+    padding: 10px 20px
+    row-gap: 4px
+
+  .control-block__left
+    row-gap: 4px
+    width: 200px
+
+  .control-block__blue
+    column-gap: 0
+
+  .control-block__count
+    margin-left: auto
+    margin-right: 6px
+
+  .control-block__icon
+    display: block
+
+  .control-block__red,.control-block__right
+    column-gap: 0
+
+  .control-block__right
+    flex-direction: row
+    justify-content: space-between
+    width: 100%
+
+  .control-block__right .control-block__count
+    font-size: 14px
+    font-weight: 400
+    line-height: 10px
+
+  .control-block__lines
+    display: none
+
+  .map-tabs__item
+    align-items: center
+    background: transparent !important
+    clip-path: none !important
+    color: #00fff0
+    column-gap: 16px
+    display: flex !important
+    justify-content: flex-start
+    min-width: 460px
+    text-align: left
+
+  .map-tabs__item img
+    display: block
+
+  .map__wrapper .slick-list
+    padding: 0 !important
+
+  .slick-slide
+    margin-right: 20px
+
+  .map__wrapper-scroll
+    overflow: hidden
+
+  .map__wrapper
+    margin: 0
+
+  .map-for-tabs__item
+    height: 100%
+    min-width: 460px
+    width: 100px
+
+  .map__logs
+    background: transparent
+    display: block
+    height: 90px
+    margin-top: 16px
+    overflow-y: auto
+    padding: 0
+    position: static
+    width: 100%
+
+  .map__logs-list
+    max-height: 100%
+    overflow: hidden
+    row-gap: 0
+
+  .map__logs-btn
+    justify-content: flex-start
+
+  .map__logs-item
+    column-gap: 10px
+    margin-bottom: 16px
+
+  .map__logs-title
+    display: none
+
+  .map__logs-descr,.map__logs-time
+    font-size: 16px
+    line-height: 20px
+
+  .map__logs-btn
+    display: flex
+
+
+@include  mobile
+  .map__logs
+    height: 120px
+
+  .control-block
+    font-size: 10px
+    font-weight: 400
+    line-height: 10px
+    padding: 4px
+    row-gap: 2px
+
+  .control-block__left
+    row-gap: 2px
+    width: 150px
+
+  .control-block__right .control-block__count
+    font-size: 10px
+    font-weight: 400
+    line-height: 10px
+
+  .map
+    margin: 0 auto
+
+  .map__wrapper
+    background: transparent
+
+  .map .map-for-tabs__item,.map-for-tabs
+    clip-path: none
+
+  .map-tabs::-webkit-scrollbar
+    height: 0
+    width: 0
+
+  .map-tabs__item
+    font-size: 16px
+    font-weight: 500
+    line-height: 20px
+
+  .map .map-for-tabs__item,.map .map-for-tabs__item.active,.map-tabs__item
+    min-width: 240px
+    width: 240px
+
+  .map__logs
+    background: transparent
+    padding: 0 0 24px
+
