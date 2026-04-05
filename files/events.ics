@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ZContent.net//ZapCalLib 1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:International Cyberchampionship Final | Live
+DTSTART:20230615T140000
+DTEND:20230615T180000
+LOCATION:https://cybermir.ru/en/cyberchampionship
+UID:2023-06-06-14-09-23@demo.icalendar.org
+DTSTAMP:20230607T110923
+Description:Follow International Cyber Championship final as part of the Solar CyberSprint online session hosted by Rostelecom-Solar, where Russian and foreign information security experts are waiting for you. The experts from different countries will discuss the training of BlueTeam, approaches to creating protection systems and SOC development trends. Sports commentators and experts from the National Cyber Polygon will comment International Cyber Championship during all broadcast
+END:VEVENT
+END:VCALENDAR
